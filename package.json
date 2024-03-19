@@ -9,7 +9,7 @@
     "build": "parcel build"
   },
   "keywords": [],
-  "author": "Jacobo Martinez",
+  "author": "Md Armaan K",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
