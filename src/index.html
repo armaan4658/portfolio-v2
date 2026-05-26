@@ -128,7 +128,7 @@
                   <ol class="carousel-indicators">
                     <li data-target="#proctoringCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#proctoringCarousel" data-slide-to="1"></li>
-                    <li data-target="#proctoringCarousel" data-slide-to="2"></li>
+                    <!-- <li data-target="#proctoringCarousel" data-slide-to="2"></li> -->
                   </ol>
                   <div class="carousel-inner">
                     <div 
@@ -147,13 +147,69 @@
                       <img class="d-block w-100 img-fluid" src="assets/proctoring2.png" alt="Real-time Video Feed Monitoring">
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#proctoringCarousel" role="button" data-slide="prev">
+                  <a class="carousel-control-prev proctor-prev" href="#proctoringCarousel" role="button">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
-                  <a class="carousel-control-next" href="#proctoringCarousel" role="button" data-slide="next">
+                  <a class="carousel-control-next proctor-next" href="#proctoringCarousel" role="button">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
+                  </a>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Talent Next -->
+           <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">TalentNext Engine: Algorithmic Examination & Authoring Platform</h3>
+                <div>
+                  <p class="mb-4">
+                    Developed core authoring and test-generation subsystems for MeritTrac's enterprise assessment platform using a Linear On-the-Fly Testing (LOFT) model. Programmed complex constraint-matching APIs that pseudo-randomly draw from calibrated question pools to compile distinct, content-equivalent exams for individual users instantly at runtime.
+                  </p>
+                  <p class="mb-4">
+                    This automated pipeline effectively balances topic coverage and statistical difficulty parameters while eliminating manual exam preparation overhead.
+                  </p>
+                  <p class="mb-4">
+                    <strong>Technologies used : </strong> Node.js, TypeScript, Angular, Redis, MongoDB, AWS
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <div id="talentNextCarousal" class="carousel slide thumbnail rounded shadow-lg" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#talentNextCarousal" data-slide-to="0" class="active"></li>
+                    <li data-target="#talentNextCarousal" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div 
+                    class="carousel-item active thumbnail rounded js-tilt"
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5">
+                      <img class="d-block w-100 img-fluid" src="assets/talentnext1.png" alt="Authoring loft questions">
+                    </div>
+                    <div class="carousel-item thumbnail rounded js-tilt"
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5">
+                      <img class="d-block w-100 img-fluid" src="assets/talentnext2.png" alt="Real-time assessment engine">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev talent-prev" href="#talentNextCarousal" role="button">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next talent-next" href="#talentNextCarousal" role="button">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
                   </a>
                 </div>
               </div>
@@ -370,6 +426,33 @@
         </p>
       </div>
     </footer>
+    <script>
+      window.addEventListener('load', function() {
+        // Initialize both sliders manually so they don't auto-link
+        $('#proctoringCarousel').carousel({ interval: false });
+        $('#talentNextCarousal').carousel({ interval: false });
+
+        // Isolate Proctoring Controls
+        $('.proctor-prev').click(function(e) {
+          e.preventDefault();
+          $('#proctoringCarousel').carousel('prev');
+        });
+        $('.proctor-next').click(function(e) {
+          e.preventDefault();
+          $('#proctoringCarousel').carousel('next');
+        });
+
+        // Isolate TalentNext Controls
+        $('.talent-prev').click(function(e) {
+          e.preventDefault();
+          $('#talentNextCarousal').carousel('prev');
+        });
+        $('.talent-next').click(function(e) {
+          e.preventDefault();
+          $('#talentNextCarousal').carousel('next');
+        });
+      });
+    </script>
     <script defer type="module" src="index.js"></script>
   </body>
 </html>
