@@ -28,7 +28,8 @@ jobs:
         run: npm run predeploy
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.6.4
-        with:
-          branch: gh-pages
-          folder: dist
+        # Bypasses third-party actions by using your local gh-pages dependency natively
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          npm run deploy
