@@ -3,7 +3,7 @@ name: Deploy Portfolio
 on:
   push:
     branches:
-      - main  # Triggers whenever you push code here
+      - main
 
 permissions:
   contents: write
@@ -25,10 +25,10 @@ jobs:
         run: npm ci
 
       - name: Build Production Bundle
-        run: npm run predeploy  # This runs your parcel build command
+        run: npm run predeploy
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.6.4
         with:
           branch: gh-pages
-          folder: dist  # Deploys your compiled production folder
+          folder: dist
