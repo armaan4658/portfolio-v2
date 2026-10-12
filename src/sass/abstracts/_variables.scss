@@ -1,15 +1,42 @@
-// COLORS
-$primary-color: #02aab0;
-$secondary-color: #00cdac;
+// src/sass/abstracts/_variables.scss
 
-$white-color: #fff;
+// =========================================================================
+// 1. Core Systems Engineering Theme Color Tokens
+// =========================================================================
+$color-bg-primary: #0a0f1d;    // Deep space background
+$color-bg-secondary: #111827;  // Dark slate cards
+$color-text-main: #f3f4f6;     // Pure white typography
+$color-text-muted: #9ca3af;    // Slate gray secondary text
+$color-accent: #10b981;        // High-visibility green (Valkey / LiveKit green)
+$color-accent-blue: #3b82f6;   // WebRTC signaling blue
+$font-stack-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-$dark-grey: #333333;
-$light-grey: #d2d2d2;
-
-$dark-blue-text: #272341; // For Headings
-
-// FONT SIZE
+// =========================================================================
+// 2. Sizing & Typography Variable Configurations (Fixes the current error)
+// =========================================================================
 $default-font-size: 1.6rem;
 $big-font-size: 4rem;
 $mid-font-size: 2.5rem;
+
+// =========================================================================
+// 3. Strict Backwards-Compatibility Mapping (Fixes the legacy crashes)
+// =========================================================================
+// Core text mappings
+$white-color: $color-bg-secondary;
+$white:       $color-text-main;
+$dark-grey:   $color-text-main;
+
+// Background mappings (Redirects legacy light surfaces to dark mode)
+$light-grey:    $color-bg-primary;
+$primary-color: $color-bg-primary;
+$dark-blue:     $color-bg-primary;
+
+// Accent & Component overrides
+$theme-color:   $color-accent;
+$main-color:    $color-accent;
+$text-color:    $color-text-main;
+
+// COLORS
+$secondary-color: #00cdac;
+
+$dark-blue-text: #272341; // For Headings

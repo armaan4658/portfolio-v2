@@ -1,78 +1,78 @@
-#projects {
-  background-color: $white-color;
-  color: $dark-blue-text;
-  margin-top: -10rem;
-  padding-top: 15rem;
+// sass/sections/_projects.scss
 
-  @include respond(tab-land) {
-    margin-top: 0;
-    padding-top: 5rem;
+.projects {
+  background-color: $color-bg-primary;
+  padding: 6rem 2rem;
+  color: $color-text-main;
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
   }
 
-  .project-wrapper {
-    margin-bottom: 15rem;
-
-    @include respond(phone) {
-      margin-bottom: 0rem;
-    }
-
-    .row {
-      margin-bottom: 8rem;
-
-      @include respond(phone) {
-        margin-bottom: 4rem;
-      }
-    }
-
-    &__text {
-      text-align: left;
-
-      @include respond(phone) {
-        margin-bottom: 2.5rem !important;
-      }
-      @include respond(tab-land) {
-        margin-bottom: 4.8rem;
-      }
-
-      &-title {
-        font-weight: bold;
-        margin-bottom: 1.8rem;
-        font-size: $mid-font-size;
-
-        @include respond(phone) {
-          font-size: 2rem;
-        }
-      }
-
-      & p > a {
-        color: $secondary-color;
-      }
-    }
-
-    &__image {
-      width: 90%;
-      margin: 0 auto;
-
-      @include respond(tab-land) {
-        width: 100%;
-        margin: 0;
-      }
-
-      & .thumbnail {
-        border: none;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        transition: all 0.2s ease-out;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-        transition: 0.5s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-          0.5s box-shadow,
-          0.5s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-
-        @include respond(phone) {
-          border: 1px solid $light-grey;
-          box-shadow: none;
-          margin-bottom: 3.2rem;
-        }
-      }
-    }
+  &__card {
+    background-color: $color-bg-secondary;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
   }
+
+  &__metric-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba($color-accent, 0.1);
+    color: $color-accent;
+    font-family: $font-stack-mono;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba($color-accent, 0.2);
+  }
+
+  &__tech-tag {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: $color-text-muted;
+    font-family: $font-stack-mono;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+
+  // Live Architecture Flow Visualization Block
+  &__architecture-box {
+    background-color: #05070c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-family: $font-stack-mono;
+    font-size: 0.85rem;
+    color: #38bdf8;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+}
+
+// src/sass/sections/_projects.scss extensions
+
+.projects__card {
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr !important; // Stacks diagram cleanly beneath description fields on mid-sized screens
+    gap: 2rem !important;
+  }
+}
+
+.projects__architecture-box {
+  max-width: 100%;
+  overflow-x: auto; // Force custom scrollbars on compact mobile displays to prevent horizontal page shifting
+  font-size: 0.8rem !important;
+  border-left: 2px solid #3b82f6 !important;
 }
