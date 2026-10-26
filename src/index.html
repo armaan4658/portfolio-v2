@@ -1,213 +1,516 @@
 <!DOCTYPE html>
-<html lang="en" class="sr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
-
-  <title>Md Armaan K | Senior Systems Engineer — Real-Time Media Infrastructure & Distributed Systems</title>
-  <meta name="keywords"
-    content="armaan4658, Md Armaan K, Senior Software Engineer, Full Stack Developer, WebRTC, Node.js" />
-  <meta name="description"
-    content="Md Armaan K | Senior Software Engineer specializing in scalable web applications and real-time systems." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="styles.scss" />
-
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Armaan K | Senior Systems & Frontend Media Engineer</title>
+    <!-- Tailwind CSS for sleek, modern, high-craftsmanship layout -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide Icons for high-fidelity visual anchors -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .custom-glow {
+            box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.2);
+        }
+    </style>
 </head>
+<body class="bg-[#0b0f19] text-gray-200 antialiased selection:bg-blue-500/30 selection:text-blue-200">
 
-<body>
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-gray-800/80 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-white tracking-wider custom-glow">AK</div>
+                <span class="font-bold tracking-tight text-white text-lg">Md Armaan K</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
+                <a href="#profile" class="hover:text-white transition-colors">System Profile</a>
+                <a href="#interactive-dashboard" class="hover:text-white transition-colors flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span> Live Simulation</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#engines" class="hover:text-white transition-colors">Production Engines</a>
+            </div>
+            <div class="flex items-center gap-2 border-l border-slate-800 pl-4">
+                <a href="mailto:armaankuchikar.work@gmail.com" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
 
-  <!-- MAIN HERO SECTION -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="hero__heading">Hi, my name is <span>Md Armaan K</span></h1>
-      <p class="hero__subheading">Senior Systems Engineer — Real-Time Media Infrastructure & Distributed Systems</p>
-      <div class="hero__cta-container">
-        <a href="#about" class="btn btn--primary">Inspect System Profile</a>
-        <a href="#projects" class="btn btn--secondary">Explore Architecture Core</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TARGETED OPEN SOURCE COMMITMENTS ( Никита & David Zhao Hook ) -->
-  <div class="container">
-    <div class="open-source-banner">
-      <div class="open-source-banner__info">
-        <span class="open-source-banner__meta">REPOSITORY INTEGRATION MATCH</span>
-        <p style="margin: 0.75rem 0 0 0; font-size: 1.1rem; font-weight: 500; color: #f3f4f6;">
-          Contributed explicit WebRTC track-allocation state-leak verification pipelines to the core server engine.
-        </p>
-      </div>
-      <a href="https://github.com/livekit/livekit/pull/4986" target="_blank" class="open-source-banner__link">
-        Review Pull Request #4986 &rarr;
-      </a>
-    </div>
-  </div>
-
-  <!-- PROFESSIONAL PROFILE / ABOUT SECTION -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about__content-wrapper">
-        <div>
-          <h2
-            style="font-size: 2rem; margin-bottom: 1.5rem; border-bottom: 2px solid #10b981; display: inline-block; padding-bottom: 0.5rem;">
-            SYSTEM PROFILE
-          </h2>
+                <a href="https://linkedin.com" target="_blank"
+                  class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800 text-gray-400 hover:text-white transition-colors flex items-center justify-center"
+                  aria-label="LinkedIn">
+                  <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                <a href="https://github.com" target="_blank"
+                  class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800 text-gray-400 hover:text-white transition-colors flex items-center justify-center"
+                  aria-label="GitHub">
+                  <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+            </div>
         </div>
-        <div>
-          <p class="about__description">
-            I am a systems engineer specializing in architecting <strong>high-throughput real-time communication networks</strong>,
-            global media distribution topologies, and low-latency cloud engines. My core expertise centers on diagnosing
-            and eliminating critical bottlenecks across intensive <strong>WebRTC video streaming routes, distributed data
-            layers, and asynchronous event streams</strong>.
-          </p>
-          <p class="about__description" style="margin-top: 1rem;">
-            I focus heavily on resource lifecycle protection designing robust <strong>concurrency simulation matrices</strong> to
-            stress-test platform limits up to <strong>20,000+ simultaneous active sessions</strong>, migrating
-            high-traffic distributed caches with zero downtime, and engineering production components calibrated to
-            scale efficiently under heavy concurrent thread loads.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- HIGH-PERFORMANCE PROJECTS ARCHITECTURE SECTION -->
-  <!-- EXPANDED HIGH-PERFORMANCE PROJECTS ARCHITECTURE SECTION -->
-<section id="projects" class="projects">
-  <div class="container">
-    <h2 style="font-size: 2.5rem; margin-bottom: 3rem; text-align: center;">PRODUCTION ENGINES</h2>
-    
-    <div class="projects__grid">
-      
-      <!-- ENGINE CARD 1: NEXT-GEN REMOTE PROCTORING INFRASTRUCTURE -->
-      <article class="projects__card">
-        <div>
-          <div class="projects__metric-badge">⚡ SCALE TRIGGER: 20,000+ Concurrent Active Sessions</div>
-          <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Next-Gen Remote Proctoring Multi-Tenant SaaS</h3>
-          <p style="color: #9ca3af; line-height: 1.6; margin-bottom: 1.2rem;">
-            Architected the server-side media streaming infrastructure and client-side SDK layers for a high-concurrency remote proctoring monitoring platform. Engineered fault-tolerant ingestion pipelines to capture, validate, and channel real-time camera arrays directly from distributed edge nodes.
-          </p>
-          
-          <!-- HARDWARE & COMPATIBILITY LAYER DEEP DIVE -->
-          <h4 style="font-size: 0.95rem; color: #10b981; font-family: monospace; margin-bottom: 0.5rem;">
-            ⚙️ Hardware Abstraction & Platform Engineering:
-          </h4>
-          <p style="color: #9ca3af; line-height: 1.6; margin-bottom: 1.2rem; font-size: 0.95rem;">
-            Resolved intricate cross-browser compatibility thresholds across iOS WebWorkers, desktop engines, and Android frames to govern device-level hardware permissions seamlessly. Engineered server-side video processing routines utilizing <strong>FFmpeg</strong> to capture live iPhone WebRTC streams, execute background validation, and securely pipe media fragments to AWS S3 storage layers.
-          </p>
+    <!-- Hero / System Profile -->
+    <header id="profile" class="relative max-w-7xl mx-auto px-6 pt-20 pb-16 overflow-hidden">
+        <div class="absolute top-0 right-0 -z-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 -z-10 w-80 h-80 bg-indigo-600/5 rounded-full blur-3xl"></div>
 
-          <!-- BROWSER AI & EDGE INFERENCE RUNTIMES -->
-          <h4 style="font-size: 0.95rem; color: #3b82f6; font-family: monospace; margin-bottom: 0.5rem;">
-            🧠 Browser-Side AI Model Runtimes:
-          </h4>
-          <p style="color: #9ca3af; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
-            Integrated edge computer vision and audio inference layers inside sandboxed environments. Configured <strong>MediaPipe Tasks Vision</strong> and <strong>face-api.js</strong> to track spatial candidate mutations, alongside a custom <strong>TensorFlow-based Voice Detection SDK</strong> calibrated to isolate human speech patterns from ambient background noise variables at runtime.
-          </p>
-          
-          <div style="margin-top: 1.5rem;">
-            <span class="projects__tech-tag">WebRTC</span>
-            <span class="projects__tech-tag">WebSocket</span>
-            <span class="projects__tech-tag">FFmpeg</span>
-            <span class="projects__tech-tag">TensorFlow</span>
-            <span class="projects__tech-tag">MediaPipe</span>
-            <span class="projects__tech-tag">Valkey</span>
-            <span class="projects__tech-tag">Node.js</span>
-            <span class="projects__tech-tag">Angular Forms SDK</span>
-          </div>
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Senior Systems Engineer <br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">
+                    Real-Time Media Infrastructure
+                </span>
+            </h1>
+            <p class="text-lg text-gray-400 leading-relaxed mb-8">
+                Specializing in architecting <strong class="text-white font-semibold">high-throughput real-time communication networks</strong>, global media distribution topologies, and low-latency cloud engines. Deep expertise in identifying and eliminating critical production bottlenecks across intensive <strong class="text-white font-semibold">WebRTC video streaming routes, distributed data layers, and asynchronous event streams</strong>.
+            </p>
+            <div class="flex flex-wrap gap-4 text-xs font-semibold tracking-wider uppercase text-gray-400">
+                <div class="flex items-center gap-1.5 bg-gray-900/60 border border-gray-800 px-3 py-2 rounded-lg"><i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i> 20,000+ Active Sessions Scale</div>
+                <div class="flex items-center gap-1.5 bg-gray-900/60 border border-gray-800 px-3 py-2 rounded-lg"><i data-lucide="trending-down" class="w-4 h-4 text-emerald-500"></i> Latency Drop 30s ➔ &lt;2s</div>
+                <div class="flex items-center gap-1.5 bg-gray-900/60 border border-gray-800 px-3 py-2 rounded-lg"><i data-lucide="cpu" class="w-4 h-4 text-purple-500"></i> Client-Side Edge AI Inference</div>
+            </div>
         </div>
+    </header>
+
+    <!-- NEW FRONTEND CAPABILITY SECTION FOR CORAM AI MATCH -->
+    <!-- Interactive Spatial Surveillance, Multi-Camera Grid & WebRTC Playback Simulator -->
+    <section id="interactive-dashboard" class="max-w-7xl mx-auto px-6 py-12">
+        <div class="border border-gray-800/80 bg-gray-900/40 rounded-2xl p-6 md:p-8 custom-glow backdrop-blur-sm">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8 border-b border-gray-800 pb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i data-lucide="layout-grid" class="text-blue-500 w-6 h-6"></i> 
+                        Live Surveillance & Video Analytics Control Matrix
+                    </h2>
+                    <p class="text-sm text-gray-400 mt-1">
+                        High-fidelity UI simulation engineered to demonstrate complex client-side computer vision rendering, frame-accurate timeline scrubbing, and Mapbox/Leaflet spatial coordinates mapping.
+                    </p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="text-xs px-2.5 py-1 rounded bg-gray-800 border border-gray-700 text-gray-400 mono-text">FPS: <span id="fps-counter" class="text-emerald-400 font-bold">60.0</span></span>
+                    <span class="text-xs px-2.5 py-1 rounded bg-gray-800 border border-gray-700 text-gray-400 mono-text">Memory: <span class="text-blue-400 font-bold">24.8 MB</span></span>
+                    <button id="simulate-anomaly-btn" class="text-xs px-4 py-2 bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-300 font-semibold rounded-lg flex items-center gap-1.5 transition-all active:scale-95">
+                        <i data-lucide="alert-triangle" class="w-3.5 h-3.5 animate-bounce"></i> Trigger AI Anomaly
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left 2 Columns: Multi-Camera Grid & Playback Controller -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Camera Stream 1 -->
+                        <div class="relative bg-black rounded-xl overflow-hidden aspect-video border-2 border-blue-500/40 group shadow-inner">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10"></div>
+                            
+                            <!-- Canvas Mock Simulation Stream -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-40 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_1px]">
+                                <i data-lucide="video" class="w-12 h-12 text-gray-700 animate-pulse"></i>
+                            </div>
+                            
+                            <!-- Simulated Object Detection Box Overlay -->
+                            <div id="cam1-box" class="absolute border-2 border-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded text-[10px] text-emerald-200 font-bold uppercase tracking-wider mono-text transition-all duration-300 z-20" style="top: 25%; left: 30%; width: 35%; height: 50%;">
+                                <span class="flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping"></span> Candidate: Active</span>
+                            </div>
+
+                            <!-- Feed Overlay Metadata -->
+                            <div class="absolute top-3 left-3 z-20 bg-black/60 backdrop-blur-sm border border-gray-800 px-2.5 py-1 rounded-md text-[11px] font-semibold text-gray-300 flex items-center gap-1.5">
+                                <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span>CAM_01 / NORTH_ENTRANCE</span>
+                            </div>
+                            <div class="absolute top-3 right-3 z-20 bg-blue-600/90 text-white font-mono px-2 py-0.5 rounded text-[10px] tracking-wide uppercase">WebRTC Live</div>
+
+                            <!-- Bottom Indicators -->
+                            <div class="absolute bottom-3 left-3 right-3 z-20 flex justify-between items-center text-xs">
+                                <div class="text-gray-400 font-medium truncate">Model Inference: <span class="text-gray-200 mono-text">MediaPipe Tasks Vision</span></div>
+                                <div class="text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50 text-[10px] tracking-wide uppercase">Gaze Secured</div>
+                            </div>
+                        </div>
+
+                        <!-- Camera Stream 2 -->
+                        <div id="cam2-card" class="relative bg-black rounded-xl overflow-hidden aspect-video border border-gray-800 group transition-all duration-300 shadow-inner">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10"></div>
+                            
+                            <div class="absolute inset-0 flex items-center justify-center opacity-40 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_1px]">
+                                <i data-lucide="video" class="w-12 h-12 text-gray-700"></i>
+                            </div>
+
+                            <!-- Simulated Anomaly Box Overlay hidden by default -->
+                            <div id="cam2-anomaly-box" class="absolute border-2 border-red-500 bg-red-500/15 px-2 py-0.5 rounded text-[10px] text-red-200 font-bold uppercase tracking-wider mono-text transition-all duration-300 z-20 hidden" style="top: 15%; left: 20%; width: 55%; height: 65%;">
+                                <span class="flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-ping"></span> MULTIPLE_FACES_DETECTED</span>
+                            </div>
+
+                            <div class="absolute top-3 left-3 z-20 bg-black/60 backdrop-blur-sm border border-gray-800 px-2.5 py-1 rounded-md text-[11px] font-semibold text-gray-300 flex items-center gap-1.5">
+                                <span id="cam2-status-dot" class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                                <span>CAM_02 / SECONDARY_360</span>
+                            </div>
+                            <div class="absolute top-3 right-3 z-20 bg-indigo-600/90 text-white font-mono px-2 py-0.5 rounded text-[10px] tracking-wide uppercase">HLS Stream</div>
+
+                            <div class="absolute bottom-3 left-3 right-3 z-20 flex justify-between items-center text-xs">
+                                <div class="text-gray-400 font-medium truncate">Bandwidth Footprint: <span id="cam2-bandwidth" class="text-gray-200 mono-text">420 Kbps</span></div>
+                                <div id="cam2-ai-tag" class="text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50 text-[10px] tracking-wide uppercase">Face-API.js Verified</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Video UI: Timeline Scrubbing & Secure Chunk Controls -->
+                    <div class="bg-gray-950 rounded-xl p-4 border border-gray-800">
+                        <div class="flex items-center justify-between mb-3 text-xs">
+                            <span class="text-gray-400 font-medium flex items-center gap-1"><i data-lucide="film" class="w-3.5 h-3.5 text-blue-500"></i> Frame-Accurate Playback Analytics Engine</span>
+                            <span class="mono-text text-gray-300 font-bold" id="timeline-timestamp">00:14:32 / 01:00:00</span>
+                        </div>
+                        
+                        <!-- Timeline Scrubber Container -->
+                        <div class="relative w-full h-4 bg-gray-800 rounded-md cursor-pointer group mb-4" id="scrubber-timeline">
+                            <!-- Background Buffering Track -->
+                            <div class="absolute top-1.5 left-0 bottom-1.5 bg-gray-700/60 rounded-full w-4/5"></div>
+                            <!-- Live Playback Position Indicator -->
+                            <div class="absolute top-1.5 left-0 bottom-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-100" id="scrubber-progress" style="width: 24.2%;"></div>
+                            <!-- Handle Knob -->
+                            <div class="absolute top-0 h-4 w-4 bg-white border-2 border-blue-600 rounded-full shadow -ml-2 transition-all duration-100 group-hover:scale-125" id="scrubber-handle" style="left: 24.2%;"></div>
+                            <!-- Simulated AI Anomaly Tick Marks -->
+                            <div class="absolute top-1.5 bottom-1.5 w-1 bg-red-500 left-1/3 shadow shadow-red-500 z-10" title="Anomaly Detected at 20:00"></div>
+                            <div class="absolute top-1.5 bottom-1.5 w-1 bg-red-500 left-3/4 shadow shadow-red-500 z-10" title="Anomaly Detected at 45:00"></div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center space-x-3">
+                                <button id="play-btn" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"><i data-lucide="play" class="w-4 h-4"></i></button>
+                                <button class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"><i data-lucide="skip-forward" class="w-4 h-4"></i></button>
+                                <div class="h-4 w-px bg-gray-800"></div>
+                                <button class="text-xs px-2.5 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-300 rounded-md font-medium tracking-wide uppercase transition-colors">1.0x Speed</button>
+                            </div>
+                            
+                            <!-- Video Utilities Feature -->
+                            <div class="flex items-center space-x-2">
+                                <button id="share-chunk-btn" class="text-xs px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-lg flex items-center gap-1.5 shadow-md shadow-blue-900/30 transition-all active:scale-95">
+                                    <i data-lucide="scissors" class="w-3.5 h-3.5"></i> Secure Clip Chunk Generation
+                                </button>
+                            </div>
+                        </div>
+                        <div id="clip-status-msg" class="text-[11px] text-blue-400 mono-text mt-3 hidden text-right animate-fade-in"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Canvas Map Asset Tracker & Live Signal Feed -->
+                <div class="space-y-6">
+                    <!-- Spatial Layout Canvas Node Map Tracker -->
+                    <div class="bg-gray-950 rounded-xl p-4 border border-gray-800 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-3">
+                                <h3 class="text-sm font-bold text-white flex items-center gap-1.5">
+                                    <i data-lucide="map" class="text-indigo-400 w-4 h-4"></i> Spatial Asset Center Tracking
+                                </h3>
+                                <span class="text-[10px] text-indigo-400 tracking-wider uppercase font-semibold bg-indigo-950 px-2 py-0.5 rounded border border-indigo-900/50">Canvas Viewport</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mb-3 leading-relaxed">
+                                Simulating interactive geospatial anchor overlays (Mapbox/Leaflet pattern) tracking live hardware nodes, camera streams, and localized physical anomalies.
+                            </p>
+                        </div>
+                        
+                        <!-- Interactive Mock Interactive Map Layout Grid Component -->
+                        <div class="relative bg-[#0d1322] border border-gray-800/80 rounded-lg aspect-square w-full mb-3 flex items-center justify-center overflow-hidden">
+                            <!-- Visual Coordinate Grids -->
+                            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                            
+                            <!-- Static Center Node Marker Icon -->
+                            <div class="absolute z-10 flex flex-col items-center cursor-pointer group" style="top: 40%; left: 50%;">
+                                <div class="h-3 w-3 bg-blue-500 rounded-full border border-white animate-ping absolute"></div>
+                                <div class="h-3 w-3 bg-blue-600 rounded-full border border-white relative shadow-md"></div>
+                                <span class="mt-1 bg-gray-900/90 text-white font-mono text-[8px] px-1.5 py-0.5 rounded border border-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Center Node Alpha</span>
+                            </div>
+
+                            <!-- Node 2 (West Camera placement) -->
+                            <div class="absolute z-10 flex flex-col items-center cursor-pointer group" style="top: 65%; left: 25%;">
+                                <div class="h-3 w-3 bg-indigo-500 rounded-full border border-white relative shadow-md"></div>
+                                <span class="mt-1 bg-gray-900/90 text-white font-mono text-[8px] px-1.5 py-0.5 rounded border border-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">CAM_01 Node</span>
+                            </div>
+
+                            <!-- Anomaly dynamic plot target marker -->
+                            <div id="map-anomaly-node" class="absolute z-10 flex flex-col items-center cursor-pointer group hidden" style="top: 20%; left: 70%;">
+                                <div class="h-3 w-3 bg-red-500 rounded-full border border-white animate-ping absolute"></div>
+                                <div class="h-3 w-3 bg-red-600 rounded-full border border-white relative shadow-md"></div>
+                                <span class="mt-1 bg-red-950/90 text-red-200 font-mono text-[8px] px-1.5 py-0.5 rounded border border-red-800 whitespace-nowrap">ANOMALY_COORD_LOC</span>
+                            </div>
+
+                            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-gray-500 uppercase">LAT: 12.9716° N / LON: 77.5946° E</span>
+                        </div>
+                    </div>
+
+                    <!-- Live Asynchronous WebRTC Signals Log Feed -->
+                    <div class="bg-gray-950 rounded-xl p-4 border border-gray-800">
+                        <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-1.5">
+                            <i data-lucide="terminal" class="text-purple-400 w-4 h-4"></i> Real-Time Socket Loop logs
+                        </h3>
+                        <div id="socket-logs-box" class="h-32 overflow-y-auto space-y-1.5 pr-1 mono-text text-[10px] text-gray-400 scrollbar-thin scrollbar-thumb-gray-800">
+                            <div class="text-emerald-400">[09:37:02] Socket.IO server connected to namespace /exam-session-88392</div>
+                            <div class="text-gray-500">[09:37:04] WebRTC PeerConnection initialized successfully.</div>
+                            <div class="text-blue-400">[09:37:05] ICE candidate allocation streaming verified [STUN/TURN mesh].</div>
+                            <div class="text-gray-500">[09:37:10] Tracking telemetry frame loops dispatched to Valkey cache...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <main id="experience" class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-gray-800 pb-4">Professional Experience</h2>
+
+        <div class="space-y-12">
+            <!-- Job 1: MeritTrac -->
+            <div class="relative pl-8 border-l-2 border-blue-500/30">
+                <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-blue-600 border-4 border-[#0b0f19]"></div>
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Senior Software Engineer</h3>
+                        <p class="text-sm text-blue-400 font-medium">MeritTrac Services Private Limited</p>
+                    </div>
+                    <span class="text-xs px-3 py-1 rounded-full bg-gray-800/80 text-gray-400 font-medium border border-gray-700/50 uppercase tracking-wide">Nov 2024 – Present</span>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-400 list-none pl-0">
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> Multi-Tenant Architecture & Modular SDK: Architected and scaled a multi-tenant Remote Proctoring SaaS platform engineered as an autonomous frontend SDK, decoupling client-side video tracking components to run seamlessly across diverse external assessment engines. </li>
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> Spatial Surveillance Dashboards: Designed interactive, location-aware tracking dashboards using Mapbox and Leaflet, mapping real-time canvas hardware node matrices, camera streams, and localized physical testing center security anomalies.</li>
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> High-Frequency Streaming & Custom Video Playback: Engineered a low-latency multi-camera grid management interface utilizing React/TypeScript to stream concurrent video arrays; developed custom browser engines utilizing HLS, MSE, and Canvas/WebGL video rendering with frame-accurate timeline scrubbing and secure chunk clip sharing.
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> Distributed Systems Scaling & State Integrity: Overhauled a critical real-time state transition system (ONGOING → PAUSED → RECONNECT) by designing a Redis/Valkey distributed layer, eliminating socket-routing sync dropouts across ~80 high-concurrency node clusters.</li>
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> WebRTC Video Infrastructure & Memory Optimization: Optimized client-side rendering efficiency and network overhead by implementing aggressive browser WebRTC PeerConnection reuse routines, completely preventing connection freezes and renegotiation overhead between layout views.</li>
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> Edge AI Runtimes & Server Fallbacks: Collaborated with ML groups to orchestrate face-api.js and MediaPipe Tasks Vision edge tracking blocks inside sandboxed Web Workers alongside an intelligent server-side fallback loop for incompatible iOS architectures.</li>
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> Server-Side Audio/Video Pipeline Engineering: Programmed a media pipeline utilizing FFmpeg to process and securely stream incoming live audio/video feeds directly into AWS S3 storage layers, incorporating a TensorFlow-based audio filter SDK to isolate voice confidence boundaries from ambient noise at runtime.</li>
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span> Custom Scale Simulation Matrices: Built a specialized asynchronous testing engine via socket.io-client and wrtc simulating 20,000+ simultaneous candidate connections without browser layout overhead, exposing deep distributed socket routing blocks under production stress.</li>
+                    <li class="flex items-start gap-2"><span class="text-blue-500 mt-1">▪</span>Telemetry Pipeline Performance Optimization: Refactored a legacy candidate tracking real-time data flow from consecutive sequential DB lookups into high-speed batched queries, reducing production system endpoint latency by 93% (from 30+ seconds down to under 2 seconds) while protecting primary queues using AWS SQS.</li>
+                </ul>
+            </div>
+
+            <!-- Job 2: Knexta -->
+            <div class="relative pl-8 border-l-2 border-gray-800">
+                <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-gray-800 border-4 border-[#0b0f19]"></div>
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Software Developer</h3>
+                        <p class="text-sm text-gray-500 font-medium">Knexta Technologies LLP</p>
+                    </div>
+                    <span class="text-xs px-3 py-1 rounded-full bg-gray-800/40 text-gray-500 font-medium border border-gray-800 uppercase tracking-wide">Dec 2021 – Oct 2024</span>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-400 list-none pl-0">
+                    <li class="flex items-start gap-2"><span class="text-gray-600 mt-1">▪</span> Migrated legacy environments into a modular, event-driven Node.js and TypeScript microservices framework, shrinking platform resource usage.</li>
+                    <li class="flex items-start gap-2"><span class="text-gray-600 mt-1">▪</span> Managed secure relational data modeling (PostgreSQL) and production deployment of automated billing and RESTful APIs under peak traffic.</li>
+                    <li class="flex items-start gap-2"><span class="text-gray-600 mt-1">▪</span> Implemented high-performance Redis distributed caching layers, eliminating relational database strain and reducing response latencies.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Production Engines -->
+    <section id="engines" class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-gray-800 pb-4">Production Architecture & Core Infrastructure</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-900/30 border border-gray-800 p-6 rounded-xl">
+                <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="server" class="text-blue-400 w-5 h-5"></i> Multi-Tenant Remote Proctoring SaaS SDK
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-4">
+                    Autonomous client-side embedding infrastructure capable of hijacking low-level hardware permissions, routing real-time tracks across ICE topologies, and handling complex state transitions (ONGOING ➔ PAUSED ➔ ONGOING) with zero database layout synchronization degradation.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-gray-300">
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">WebRTC</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">Socket.IO</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">FFmpeg Pipeline</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">Valkey Cache</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">AWS S3</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-900/30 border border-gray-800 p-6 rounded-xl">
+                <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="layers" class="text-indigo-400 w-5 h-5"></i> TalentNext Algorithmic Examination Engine
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-4">
+                    Engineered linear on-the-fly constraint matching evaluation engines. Refactored candidate telemetry looping sequences into single-batch lookups, dropping data transmission latencies by 93% (from 30+ seconds to under 2 seconds) and protecting thread concurrency via decoupled AWS SQS tracks.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-gray-300">
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">Node.js</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">TypeScript</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">PostgreSQL</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">AWS SQS</span>
+                    <span class="bg-gray-800 px-2.5 py-1 rounded border border-gray-700/60">Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-6 py-8 border-t border-gray-800 text-center text-xs text-gray-500">
+        <p>© 2026 Md Armaan K. All Core Media Infrastructure Operations Secured. Engineered for Elite Performance.</p>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT SIMULATING ADVANCED FRONT-END FEATS -->
+    <script>
+        // Initialize Lucide Icons for aesthetic visual hooks
+        lucide.createIcons();
+
+        // 1. Dynamic FPS and performance tracker metrics mock
+        const fpsCounter = document.getElementById('fps-counter');
+        setInterval(() => {
+            const dynamicFps = (59.2 + Math.random() * 0.8).toFixed(1);
+            if(fpsCounter) fpsCounter.innerText = dynamicFps;
+        }, 800);
+
+        // 2. Mock Asynchronous Signaling Socket Log Stream
+        const socketBox = document.getElementById('socket-logs-box');
+        const mockLogs = [
+            "Triggered peer connection renegotiation reuse matrix.",
+            "Client canvas buffering verified for frame-accurate playback.",
+            "Dispatched media chunk upload stream directly to AWS S3 bucket.",
+            "Valkey session room keys mapped cleanly to centralized Redis cluster.",
+            "HLS secure segmented playlist initialization complete.",
+            "MediaPipe model verified candidate spatial coordinates alignment.",
+            "Bandwidth throttle event adjusted: Shifting down audio track allocations."
+        ];
         
-        <!-- ENRICHED SYSTEM TOPO DIAGRAM (Draws the full server-side media processing chain) -->
-        <div>
-          <h4 style="font-size: 0.85rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
-            Pipeline Topology Vector
-          </h4>
-          <pre class="projects__architecture-box">
-  [ Edge Devices: iPhone / Web ]
-                 │
-                 ▼ (WebRTC MediaStreams)
-  ┌─────────────────────────────┐
-  │  MediaPipe / TensorFlow SDK │ ◄── Browser Inference
-  └──────────────┬──────────────┘
-                 │
-                 ▼ (ICE / SDP Signaling Room)
-       [ Socket.IO Mesh Tiers ]
-                 │
-       ┌─────────┴─────────┐
-       ▼                   ▼
-  [ FFmpeg Nodes ]    [ Valkey State ]
-  (Server Video Ingest) (Node Session Store)
-       │                   │
-       ▼                   ▼
-  [ AWS S3 Buckets ]  [ MongoDB Logs ]
-  (Processed Media)   (Socket Routing Maps)
-          </pre>
-        </div>
-      </article>
+        setInterval(() => {
+            if(socketBox) {
+                const now = new Date();
+                const timeStr = `[${now.toTimeString().split(' ')[0]}]`;
+                const randomMsg = mockLogs[Math.floor(Math.random() * mockLogs.length)];
+                
+                const logLine = document.createElement('div');
+                logLine.className = 'text-gray-500 animate-fade-in';
+                logLine.innerHTML = `<span class="text-gray-400">${timeStr}</span> ${randomMsg}`;
+                socketBox.appendChild(logLine);
+                socketBox.scrollTop = socketBox.scrollHeight;
+                
+                // Keep max logs small for performance
+                if(socketBox.children.length > 20) {
+                    socketBox.removeChild(socketBox.children[0]);
+                }
+            }
+        }, 3000);
 
-      <!-- ENGINE CARD 2: TALENTNEXT ENGINE -->
-      <article class="projects__card" style="grid-template-columns: 1fr;">
-        <div>
-          <div class="projects__metric-badge">📉 LATENCY SHIFT: From 30s Down To &lt;2s Batch Processing</div>
-          <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">TalentNext Engine: Algorithmic Examination & Authoring Platform</h3>
-          <p style="color: #9ca3af; line-height: 1.6; margin-bottom: 1.5rem;">
-            Developed high-performance authoring and dynamic assessment subsystems for an enterprise scaling suite utilizing a Linear On-the-Fly Testing (LOFT) framework. Programmed high-frequency constraint-matching query blocks that pseudo-randomly process calibrated datasets to isolate and assemble content-equivalent evaluations at runtime.
-          </p>
-          <p style="color: #9ca3af; line-height: 1.6; margin-bottom: 1.5rem;">
-            Refactored bottlenecked database queries by shifting sequential record lookup sequences into unified batch processing tracks, dropping application processing latency by 93% while isolating primary processing queues via <strong>AWS SQS</strong> from core thread degradation.
-          </p>
-          <div>
-            <span class="projects__tech-tag">Node.js</span>
-            <span class="projects__tech-tag">TypeScript</span>
-            <span class="projects__tech-tag">PostgreSQL</span>
-            <span class="projects__tech-tag">Redis</span>
-            <span class="projects__tech-tag">AWS SQS</span>
-            <span class="projects__tech-tag">Docker</span>
-          </div>
-        </div>
-      </article>
+        // 3. AI Anomaly Simulation Click Event Trigger
+        const anomalyBtn = document.getElementById('simulate-anomaly-btn');
+        const cam2Card = document.getElementById('cam2-card');
+        const cam2AnomalyBox = document.getElementById('cam2-anomaly-box');
+        const cam2StatusDot = document.getElementById('cam2-status-dot');
+        const cam2Bandwidth = document.getElementById('cam2-bandwidth');
+        const cam2AiTag = document.getElementById('cam2-ai-tag');
+        const mapAnomalyNode = document.getElementById('map-anomaly-node');
 
-    </div>
-  </div>
-</section>
-<!-- SYSTEM PORTFOLIO FOOTER -->
-<footer class="system-footer">
-  <div class="container">
-    <div class="system-footer__wrapper">
-      
-      
-      
-        <p class="system-footer__text">
-          &copy; 2026 <span>Md Armaan K</span>. All System Operations Secured.
-        </p>
-        <p class="system-footer__subtext">[ Real-Time Media & Distributed Infrastructure Profile ]</p>
-      </div>
+        if(anomalyBtn) {
+            anomalyBtn.addEventListener('click', () => {
+                if(cam2AnomalyBox && cam2AnomalyBox.classList.contains('hidden')) {
+                    // Turn on anomaly warnings
+                    cam2AnomalyBox.classList.remove('hidden');
+                    cam2Card.classList.remove('border-gray-800');
+                    cam2Card.classList.add('border-red-500', 'shadow-[0_0_15px_rgba(239,68,68,0.3)]');
+                    cam2StatusDot.classList.remove('bg-emerald-500');
+                    cam2StatusDot.classList.add('bg-red-500');
+                    cam2Bandwidth.innerText = "1850 Kbps (Intensive)";
+                    cam2AiTag.innerText = "CRITICAL VIOLATION DETECTED";
+                    cam2AiTag.className = "text-red-400 font-bold bg-red-950/80 px-2 py-0.5 rounded border border-red-800/50 text-[10px] tracking-wide uppercase";
+                    if(mapAnomalyNode) mapAnomalyNode.classList.remove('hidden');
+                    
+                    // Add alert log
+                    const logLine = document.createElement('div');
+                    logLine.className = 'text-red-400 font-bold';
+                    logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] [CRITICAL ALERT] CAM_02 triggered MULTIPLE_FACES_DETECTED vector payload!`;
+                    socketBox.appendChild(logLine);
+                    socketBox.scrollTop = socketBox.scrollHeight;
 
-      <!-- Right side: Clean Architectural Connective Nodes -->
-      <div class="system-footer__links">
-        <a href="https://www.linkedin.com/in/armaan-k-68ab3b206/" target="_blank" class="system-footer__link">
-          <code class="system-footer__icon">ln://</code>LinkedIn
-        </a>
-        <a href="https://github.com/armaan4658" target="_blank" class="system-footer__link">
-          <code class="system-footer__icon">git://</code>GitHub
-        </a>
-        <a href="mailto:armaankuchikar.work@gmail.com" class="system-footer__link">
-          <code class="system-footer__icon">smtp://</code>Email
-        </a>
-      </div>
+                    anomalyBtn.innerText = "Clear AI Anomaly";
+                    anomalyBtn.className = "text-xs px-4 py-2 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-semibold rounded-lg flex items-center gap-1.5 transition-all active:scale-95";
+                } else {
+                    // Clear anomaly warnings
+                    cam2AnomalyBox.classList.add('hidden');
+                    cam2Card.classList.remove('border-red-500', 'shadow-[0_0_15px_rgba(239,68,68,0.3)]');
+                    cam2Card.classList.add('border-gray-800');
+                    cam2StatusDot.classList.remove('bg-red-500');
+                    cam2StatusDot.classList.add('bg-emerald-500');
+                    cam2Bandwidth.innerText = "420 Kbps";
+                    cam2AiTag.innerText = "Face-API.js Verified";
+                    cam2AiTag.className = "text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50 text-[10px] tracking-wide uppercase";
+                    if(mapAnomalyNode) mapAnomalyNode.classList.add('hidden');
 
-    </div>
-  </div>
-</footer>
+                    // Add clean log
+                    const logLine = document.createElement('div');
+                    logLine.className = 'text-emerald-400';
+                    logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] [RESOLVED] Client runtime pipelines cleared anomaly logs successfully.`;
+                    socketBox.appendChild(logLine);
+                    socketBox.scrollTop = socketBox.scrollHeight;
 
+                    anomalyBtn.innerText = "Trigger AI Anomaly";
+                    anomalyBtn.className = "text-xs px-4 py-2 bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-300 font-semibold rounded-lg flex items-center gap-1.5 transition-all active:scale-95";
+                }
+            });
+        }
 
+        // 4. Interactive Timeline Scrubbing Mock
+        const timeline = document.getElementById('scrubber-timeline');
+        const progress = document.getElementById('scrubber-progress');
+        const handle = document.getElementById('scrubber-handle');
+        const timestamp = document.getElementById('timeline-timestamp');
+
+        if(timeline) {
+            timeline.addEventListener('click', (e) => {
+                const rect = timeline.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const percentage = Math.max(0, Math.min(100, (clickX / rect.width) * 100));
+                
+                if(progress) progress.style.width = `${percentage}%`;
+                if(handle) handle.style.left = `${percentage}%`;
+                
+                // Calculate simulated hours/minutes
+                const totalSeconds = 3600; // 1 hour
+                const currentSeconds = Math.floor((percentage / 100) * totalSeconds);
+                const hrs = String(Math.floor(currentSeconds / 3600)).padStart(2, '0');
+                const mins = String(Math.floor((currentSeconds % 3600) / 60)).padStart(2, '0');
+                const secs = String(currentSeconds % 60).padStart(2, '0');
+                
+                if(timestamp) timestamp.innerText = `${hrs}:${mins}:${secs} / 01:00:00`;
+                
+                // Log interactive scrub event
+                const logLine = document.createElement('div');
+                logLine.className = 'text-blue-300 text-[9px]';
+                logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] Client frame scrubbed precisely to spatial marker index: ${percentage.toFixed(2)}%`;
+                socketBox.appendChild(logLine);
+                socketBox.scrollTop = socketBox.scrollHeight;
+            });
+        }
+
+        // 5. Secure Clip Chunk Generation Interaction
+        const shareBtn = document.getElementById('share-chunk-btn');
+        const statusMsg = document.getElementById('clip-status-msg');
+
+        if(shareBtn && statusMsg) {
+            shareBtn.addEventListener('click', () => {
+                statusMsg.innerText = "Compiling secure video layout buffer stream into isolated chunks...";
+                statusMsg.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    statusMsg.innerText = "✓ Secure shared video chunk successfully generated (Base64 chunk string signed via AWS S3 asset loop Key)";
+                    
+                    const logLine = document.createElement('div');
+                    logLine.className = 'text-indigo-400 font-semibold';
+                    logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] [SUCCESS] Dispatched secure shared clip payload tracking link to local client clipboard matrix.`;
+                    socketBox.appendChild(logLine);
+                    socketBox.scrollTop = socketBox.scrollHeight;
+                }, 1500);
+            });
+        }
+    </script>
 </body>
-
 </html>
