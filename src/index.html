@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Armaan K | Senior Systems & Frontend Media Engineer</title>
+    <title>Md Armaan K | Real-Time Media & Frontend Engineer</title>
     <!-- Tailwind CSS for sleek, modern, high-craftsmanship layout -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Lucide Icons for high-fidelity visual anchors -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+    <script type="module" src="./scripts/media.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body {
@@ -32,7 +35,7 @@
             </div>
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
                 <a href="#profile" class="hover:text-white transition-colors">System Profile</a>
-                <a href="#interactive-dashboard" class="hover:text-white transition-colors flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span> Live Simulation</a>
+                <a href="#interactive-dashboard" class="hover:text-white transition-colors flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span> Media Lab</a>
                 <a href="#experience" class="hover:text-white transition-colors">Experience</a>
                 <a href="#engines" class="hover:text-white transition-colors">Production Engines</a>
             </div>
@@ -86,188 +89,127 @@
         </div>
     </header>
 
-    <!-- NEW FRONTEND CAPABILITY SECTION FOR CORAM AI MATCH -->
-    <!-- Interactive Spatial Surveillance, Multi-Camera Grid & WebRTC Playback Simulator -->
+    <!-- Local video analysis and browser WebRTC diagnostics -->
     <section id="interactive-dashboard" class="max-w-7xl mx-auto px-6 py-12">
-        <div class="border border-gray-800/80 bg-gray-900/40 rounded-2xl p-6 md:p-8 custom-glow backdrop-blur-sm">
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8 border-b border-gray-800 pb-6">
-                <div>
-                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                        <i data-lucide="layout-grid" class="text-blue-500 w-6 h-6"></i> 
-                        Live Surveillance & Video Analytics Control Matrix
-                    </h2>
-                    <p class="text-sm text-gray-400 mt-1">
-                        High-fidelity UI simulation engineered to demonstrate complex client-side computer vision rendering, frame-accurate timeline scrubbing, and Mapbox/Leaflet spatial coordinates mapping.
-                    </p>
-                </div>
-                <div class="flex flex-wrap items-center gap-3">
-                    <span class="text-xs px-2.5 py-1 rounded bg-gray-800 border border-gray-700 text-gray-400 mono-text">FPS: <span id="fps-counter" class="text-emerald-400 font-bold">60.0</span></span>
-                    <span class="text-xs px-2.5 py-1 rounded bg-gray-800 border border-gray-700 text-gray-400 mono-text">Memory: <span class="text-blue-400 font-bold">24.8 MB</span></span>
-                    <button id="simulate-anomaly-btn" class="text-xs px-4 py-2 bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-300 font-semibold rounded-lg flex items-center gap-1.5 transition-all active:scale-95">
-                        <i data-lucide="alert-triangle" class="w-3.5 h-3.5 animate-bounce"></i> Trigger AI Anomaly
-                    </button>
-                </div>
-            </div>
+        <div class="mb-8 max-w-3xl">
+            <p class="mono-text text-xs uppercase tracking-[0.2em] text-blue-400 mb-3">Interactive media lab</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Video Analysis & WebRTC</h2>
+            <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+                Select a local video to inspect sampled frames in your browser, then send its playback through a local WebRTC peer connection. The file is not uploaded; detection counts describe analyzed frames, not unique people across the entire clip.
+            </p>
+        </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Left 2 Columns: Multi-Camera Grid & Playback Controller -->
-                <div class="lg:col-span-2 space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Camera Stream 1 -->
-                        <div class="relative bg-black rounded-xl overflow-hidden aspect-video border-2 border-blue-500/40 group shadow-inner">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10"></div>
-                            
-                            <!-- Canvas Mock Simulation Stream -->
-                            <div class="absolute inset-0 flex items-center justify-center opacity-40 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_1px]">
-                                <i data-lucide="video" class="w-12 h-12 text-gray-700 animate-pulse"></i>
-                            </div>
-                            
-                            <!-- Simulated Object Detection Box Overlay -->
-                            <div id="cam1-box" class="absolute border-2 border-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded text-[10px] text-emerald-200 font-bold uppercase tracking-wider mono-text transition-all duration-300 z-20" style="top: 25%; left: 30%; width: 35%; height: 50%;">
-                                <span class="flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping"></span> Candidate: Active</span>
-                            </div>
-
-                            <!-- Feed Overlay Metadata -->
-                            <div class="absolute top-3 left-3 z-20 bg-black/60 backdrop-blur-sm border border-gray-800 px-2.5 py-1 rounded-md text-[11px] font-semibold text-gray-300 flex items-center gap-1.5">
-                                <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                <span>CAM_01 / NORTH_ENTRANCE</span>
-                            </div>
-                            <div class="absolute top-3 right-3 z-20 bg-blue-600/90 text-white font-mono px-2 py-0.5 rounded text-[10px] tracking-wide uppercase">WebRTC Live</div>
-
-                            <!-- Bottom Indicators -->
-                            <div class="absolute bottom-3 left-3 right-3 z-20 flex justify-between items-center text-xs">
-                                <div class="text-gray-400 font-medium truncate">Model Inference: <span class="text-gray-200 mono-text">MediaPipe Tasks Vision</span></div>
-                                <div class="text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50 text-[10px] tracking-wide uppercase">Gaze Secured</div>
-                            </div>
-                        </div>
-
-                        <!-- Camera Stream 2 -->
-                        <div id="cam2-card" class="relative bg-black rounded-xl overflow-hidden aspect-video border border-gray-800 group transition-all duration-300 shadow-inner">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10"></div>
-                            
-                            <div class="absolute inset-0 flex items-center justify-center opacity-40 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_1px]">
-                                <i data-lucide="video" class="w-12 h-12 text-gray-700"></i>
-                            </div>
-
-                            <!-- Simulated Anomaly Box Overlay hidden by default -->
-                            <div id="cam2-anomaly-box" class="absolute border-2 border-red-500 bg-red-500/15 px-2 py-0.5 rounded text-[10px] text-red-200 font-bold uppercase tracking-wider mono-text transition-all duration-300 z-20 hidden" style="top: 15%; left: 20%; width: 55%; height: 65%;">
-                                <span class="flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-ping"></span> MULTIPLE_FACES_DETECTED</span>
-                            </div>
-
-                            <div class="absolute top-3 left-3 z-20 bg-black/60 backdrop-blur-sm border border-gray-800 px-2.5 py-1 rounded-md text-[11px] font-semibold text-gray-300 flex items-center gap-1.5">
-                                <span id="cam2-status-dot" class="h-2 w-2 rounded-full bg-emerald-500"></span>
-                                <span>CAM_02 / SECONDARY_360</span>
-                            </div>
-                            <div class="absolute top-3 right-3 z-20 bg-indigo-600/90 text-white font-mono px-2 py-0.5 rounded text-[10px] tracking-wide uppercase">HLS Stream</div>
-
-                            <div class="absolute bottom-3 left-3 right-3 z-20 flex justify-between items-center text-xs">
-                                <div class="text-gray-400 font-medium truncate">Bandwidth Footprint: <span id="cam2-bandwidth" class="text-gray-200 mono-text">420 Kbps</span></div>
-                                <div id="cam2-ai-tag" class="text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50 text-[10px] tracking-wide uppercase">Face-API.js Verified</div>
-                            </div>
-                        </div>
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <article class="border border-gray-800 bg-gray-900/40 rounded-2xl p-5 md:p-6 custom-glow">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">1. Local video analysis</h3>
+                        <p class="text-sm text-gray-400 mt-1">COCO-SSD detects people and supported animal classes in sampled frames.</p>
                     </div>
+                    <span class="shrink-0 text-[11px] mono-text px-2.5 py-1 rounded border border-emerald-800/60 bg-emerald-950/40 text-emerald-300">ON-DEVICE INFERENCE</span>
+                </div>
 
-                    <!-- Custom Video UI: Timeline Scrubbing & Secure Chunk Controls -->
-                    <div class="bg-gray-950 rounded-xl p-4 border border-gray-800">
-                        <div class="flex items-center justify-between mb-3 text-xs">
-                            <span class="text-gray-400 font-medium flex items-center gap-1"><i data-lucide="film" class="w-3.5 h-3.5 text-blue-500"></i> Frame-Accurate Playback Analytics Engine</span>
-                            <span class="mono-text text-gray-300 font-bold" id="timeline-timestamp">00:14:32 / 01:00:00</span>
-                        </div>
-                        
-                        <!-- Timeline Scrubber Container -->
-                        <div class="relative w-full h-4 bg-gray-800 rounded-md cursor-pointer group mb-4" id="scrubber-timeline">
-                            <!-- Background Buffering Track -->
-                            <div class="absolute top-1.5 left-0 bottom-1.5 bg-gray-700/60 rounded-full w-4/5"></div>
-                            <!-- Live Playback Position Indicator -->
-                            <div class="absolute top-1.5 left-0 bottom-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-100" id="scrubber-progress" style="width: 24.2%;"></div>
-                            <!-- Handle Knob -->
-                            <div class="absolute top-0 h-4 w-4 bg-white border-2 border-blue-600 rounded-full shadow -ml-2 transition-all duration-100 group-hover:scale-125" id="scrubber-handle" style="left: 24.2%;"></div>
-                            <!-- Simulated AI Anomaly Tick Marks -->
-                            <div class="absolute top-1.5 bottom-1.5 w-1 bg-red-500 left-1/3 shadow shadow-red-500 z-10" title="Anomaly Detected at 20:00"></div>
-                            <div class="absolute top-1.5 bottom-1.5 w-1 bg-red-500 left-3/4 shadow shadow-red-500 z-10" title="Anomaly Detected at 45:00"></div>
-                        </div>
+                <label for="video-file" class="block text-xs font-semibold text-gray-300 mb-2">Choose a video file</label>
+                <div class="flex flex-col sm:flex-row gap-3 mb-2">
+                    <input id="video-file" type="file" accept="video/*" class="block w-full min-w-0 text-sm text-gray-300 file:mr-3 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <p id="video-file-name" class="text-xs text-gray-500 mb-4 break-all" aria-live="polite">No video selected</p>
 
-                        <div class="flex flex-wrap items-center justify-between gap-4">
-                            <div class="flex items-center space-x-3">
-                                <button id="play-btn" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"><i data-lucide="play" class="w-4 h-4"></i></button>
-                                <button class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"><i data-lucide="skip-forward" class="w-4 h-4"></i></button>
-                                <div class="h-4 w-px bg-gray-800"></div>
-                                <button class="text-xs px-2.5 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-300 rounded-md font-medium tracking-wide uppercase transition-colors">1.0x Speed</button>
-                            </div>
-                            
-                            <!-- Video Utilities Feature -->
-                            <div class="flex items-center space-x-2">
-                                <button id="share-chunk-btn" class="text-xs px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-lg flex items-center gap-1.5 shadow-md shadow-blue-900/30 transition-all active:scale-95">
-                                    <i data-lucide="scissors" class="w-3.5 h-3.5"></i> Secure Clip Chunk Generation
-                                </button>
-                            </div>
-                        </div>
-                        <div id="clip-status-msg" class="text-[11px] text-blue-400 mono-text mt-3 hidden text-right animate-fade-in"></div>
+                <div class="relative aspect-video overflow-hidden rounded-xl border border-gray-800 bg-black">
+                    <video id="analysis-video" class="absolute inset-0 h-full w-full object-contain" muted playsinline preload="metadata" aria-label="Selected video for local analysis"></video>
+                    <canvas id="detection-overlay" class="absolute inset-0 h-full w-full object-contain pointer-events-none" aria-hidden="true"></canvas>
+                    <p id="video-error-message" class="absolute inset-0 hidden items-center justify-center bg-gray-950/95 p-6 text-center text-sm text-red-200" role="alert" aria-live="assertive"></p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 mt-4">
+                    <button id="video-play-btn" type="button" disabled aria-label="Play video" class="rounded-lg bg-gray-800 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-40">Play</button>
+                    <button id="video-speed-btn" type="button" disabled aria-label="Playback speed 1x" class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm font-semibold text-gray-200 hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-40">1×</button>
+                    <span class="text-xs text-gray-500">Playback speed</span>
+                </div>
+
+                <div class="mt-4">
+                    <label for="video-timeline" class="sr-only">Seek through selected video</label>
+                    <div class="relative pt-1">
+                        <input id="video-timeline" type="range" min="0" max="0" value="0" step="0.1" disabled class="relative z-10 w-full accent-blue-500 disabled:opacity-40" aria-label="Seek through selected video">
+                        <div id="detection-markers" class="absolute inset-x-0 top-1 h-2 pointer-events-none" aria-hidden="true"></div>
+                    </div>
+                    <div class="flex justify-between mono-text text-[11px] text-gray-400 mt-2">
+                        <span id="video-timestamp">00:00 / 00:00</span>
+                        <span>Amber marks: detections in sampled frames</span>
                     </div>
                 </div>
 
-                <!-- Right Column: Canvas Map Asset Tracker & Live Signal Feed -->
-                <div class="space-y-6">
-                    <!-- Spatial Layout Canvas Node Map Tracker -->
-                    <div class="bg-gray-950 rounded-xl p-4 border border-gray-800 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-3">
-                                <h3 class="text-sm font-bold text-white flex items-center gap-1.5">
-                                    <i data-lucide="map" class="text-indigo-400 w-4 h-4"></i> Spatial Asset Center Tracking
-                                </h3>
-                                <span class="text-[10px] text-indigo-400 tracking-wider uppercase font-semibold bg-indigo-950 px-2 py-0.5 rounded border border-indigo-900/50">Canvas Viewport</span>
-                            </div>
-                            <p class="text-xs text-gray-400 mb-3 leading-relaxed">
-                                Simulating interactive geospatial anchor overlays (Mapbox/Leaflet pattern) tracking live hardware nodes, camera streams, and localized physical anomalies.
-                            </p>
-                        </div>
-                        
-                        <!-- Interactive Mock Interactive Map Layout Grid Component -->
-                        <div class="relative bg-[#0d1322] border border-gray-800/80 rounded-lg aspect-square w-full mb-3 flex items-center justify-center overflow-hidden">
-                            <!-- Visual Coordinate Grids -->
-                            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                            
-                            <!-- Static Center Node Marker Icon -->
-                            <div class="absolute z-10 flex flex-col items-center cursor-pointer group" style="top: 40%; left: 50%;">
-                                <div class="h-3 w-3 bg-blue-500 rounded-full border border-white animate-ping absolute"></div>
-                                <div class="h-3 w-3 bg-blue-600 rounded-full border border-white relative shadow-md"></div>
-                                <span class="mt-1 bg-gray-900/90 text-white font-mono text-[8px] px-1.5 py-0.5 rounded border border-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Center Node Alpha</span>
-                            </div>
+                <div class="flex flex-wrap gap-3 mt-5">
+                    <button id="analyze-btn" type="button" disabled class="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40">Start analysis</button>
+                    <button id="stop-analysis-btn" type="button" disabled class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm font-semibold text-gray-200 hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-40">Stop analysis</button>
+                </div>
+                <p id="analysis-status" class="text-sm text-gray-400 mt-3" role="status" aria-live="polite">Choose a video to begin. The selected file remains in your browser.</p>
 
-                            <!-- Node 2 (West Camera placement) -->
-                            <div class="absolute z-10 flex flex-col items-center cursor-pointer group" style="top: 65%; left: 25%;">
-                                <div class="h-3 w-3 bg-indigo-500 rounded-full border border-white relative shadow-md"></div>
-                                <span class="mt-1 bg-gray-900/90 text-white font-mono text-[8px] px-1.5 py-0.5 rounded border border-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">CAM_01 Node</span>
-                            </div>
-
-                            <!-- Anomaly dynamic plot target marker -->
-                            <div id="map-anomaly-node" class="absolute z-10 flex flex-col items-center cursor-pointer group hidden" style="top: 20%; left: 70%;">
-                                <div class="h-3 w-3 bg-red-500 rounded-full border border-white animate-ping absolute"></div>
-                                <div class="h-3 w-3 bg-red-600 rounded-full border border-white relative shadow-md"></div>
-                                <span class="mt-1 bg-red-950/90 text-red-200 font-mono text-[8px] px-1.5 py-0.5 rounded border border-red-800 whitespace-nowrap">ANOMALY_COORD_LOC</span>
-                            </div>
-
-                            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-gray-500 uppercase">LAT: 12.9716° N / LON: 77.5946° E</span>
-                        </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3">
+                        <p class="text-[10px] uppercase tracking-wide text-gray-500">People / frame</p>
+                        <p id="people-count" class="mono-text text-lg font-bold text-emerald-300 mt-1">—</p>
                     </div>
-
-                    <!-- Live Asynchronous WebRTC Signals Log Feed -->
-                    <div class="bg-gray-950 rounded-xl p-4 border border-gray-800">
-                        <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-1.5">
-                            <i data-lucide="terminal" class="text-purple-400 w-4 h-4"></i> Real-Time Socket Loop logs
-                        </h3>
-                        <div id="socket-logs-box" class="h-32 overflow-y-auto space-y-1.5 pr-1 mono-text text-[10px] text-gray-400 scrollbar-thin scrollbar-thumb-gray-800">
-                            <div class="text-emerald-400">[09:37:02] Socket.IO server connected to namespace /exam-session-88392</div>
-                            <div class="text-gray-500">[09:37:04] WebRTC PeerConnection initialized successfully.</div>
-                            <div class="text-blue-400">[09:37:05] ICE candidate allocation streaming verified [STUN/TURN mesh].</div>
-                            <div class="text-gray-500">[09:37:10] Tracking telemetry frame loops dispatched to Valkey cache...</div>
-                        </div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3">
+                        <p class="text-[10px] uppercase tracking-wide text-gray-500">Animals / frame</p>
+                        <p id="animal-count" class="mono-text text-lg font-bold text-blue-300 mt-1">—</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3">
+                        <p class="text-[10px] uppercase tracking-wide text-gray-500">Inference time</p>
+                        <p id="inference-time" class="mono-text text-lg font-bold text-gray-200 mt-1">—</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3">
+                        <p class="text-[10px] uppercase tracking-wide text-gray-500">Unique samples analyzed</p>
+                        <p id="frames-analyzed" class="mono-text text-lg font-bold text-gray-200 mt-1">0</p>
                     </div>
                 </div>
-            </div>
+                <div class="mt-4 rounded-lg border border-gray-800 bg-gray-950/70 p-3">
+                    <div class="flex items-center justify-between gap-3 mb-2">
+                        <label for="confidence-threshold" class="text-xs text-gray-300">Minimum detection confidence</label>
+                        <span id="confidence-value" class="mono-text text-xs text-gray-200">10%</span>
+                    </div>
+                    <input id="confidence-threshold" type="range" min="10" max="80" step="5" value="10" class="w-full accent-blue-500" aria-describedby="confidence-help">
+                    <p id="confidence-help" class="text-[11px] leading-relaxed text-gray-500 mt-2">Lower values can reveal partially occluded or dimly lit people, but may add false positives. Low-confidence boxes are shown in amber; review detections rather than treating them as certain.</p>
+                </div>
+                <p id="detection-summary" class="text-xs text-gray-400 mt-4" aria-live="polite">Start analysis to inspect sampled frames.</p>
+                <p class="text-[11px] leading-relaxed text-gray-500 mt-3">The detector supports person, bird, cat, dog, horse, sheep, cow, elephant, bear, zebra, and giraffe. Sample positions are tracked per video, so replaying the same position does not increase this count; it does not track unique object identities. Model code and weights load from the configured CDN, but your video frames are processed locally.</p>
+            </article>
+
+            <article class="border border-gray-800 bg-gray-900/40 rounded-2xl p-5 md:p-6">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">2. WebRTC loopback diagnostics</h3>
+                        <p class="text-sm text-gray-400 mt-1">Negotiate a local offer/answer and inspect browser-reported connection statistics.</p>
+                    </div>
+                    <span class="shrink-0 text-[11px] mono-text px-2.5 py-1 rounded border border-indigo-800/60 bg-indigo-950/40 text-indigo-300">PEER-TO-PEER DEMO</span>
+                </div>
+
+                <div class="aspect-video overflow-hidden rounded-xl border border-gray-800 bg-black">
+                    <video id="webrtc-video" class="h-full w-full object-contain" autoplay muted playsinline aria-label="Video received by the remote WebRTC peer"></video>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Remote peer playback. Connect after selecting a video; playback will start if needed.</p>
+                <div class="flex flex-wrap gap-3 mt-4">
+                    <button id="webrtc-connect-btn" type="button" disabled class="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-40">Connect loopback</button>
+                    <button id="webrtc-disconnect-btn" type="button" disabled class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm font-semibold text-gray-200 hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-40">Disconnect</button>
+                </div>
+                <p id="webrtc-status" class="text-sm text-gray-400 mt-3" role="status" aria-live="polite">Choose a video to enable the loopback.</p>
+
+                <dl class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-5">
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3"><dt class="text-[10px] uppercase tracking-wide text-gray-500">Connection</dt><dd id="connection-state" class="mono-text text-sm font-bold text-gray-200 mt-1">closed</dd></div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3"><dt class="text-[10px] uppercase tracking-wide text-gray-500">ICE state</dt><dd id="ice-state" class="mono-text text-sm font-bold text-gray-200 mt-1">closed</dd></div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3"><dt class="text-[10px] uppercase tracking-wide text-gray-500">Video codec</dt><dd id="codec-value" class="mono-text text-sm font-bold text-gray-200 mt-1">—</dd></div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3"><dt class="text-[10px] uppercase tracking-wide text-gray-500">Round-trip time</dt><dd id="rtt-value" class="mono-text text-sm font-bold text-gray-200 mt-1">—</dd></div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3"><dt class="text-[10px] uppercase tracking-wide text-gray-500">Outbound bitrate</dt><dd id="bitrate-value" class="mono-text text-sm font-bold text-gray-200 mt-1">—</dd></div>
+                    <div class="rounded-lg border border-gray-800 bg-gray-950/70 p-3"><dt class="text-[10px] uppercase tracking-wide text-gray-500">Local candidates</dt><dd id="candidate-count" class="mono-text text-sm font-bold text-gray-200 mt-1">—</dd></div>
+                </dl>
+                <div class="mt-5">
+                    <h4 class="text-xs font-semibold text-gray-300 mb-2">Negotiation events</h4>
+                    <ol id="webrtc-log" class="h-28 overflow-y-auto rounded-lg border border-gray-800 bg-gray-950/70 p-3 space-y-1 mono-text text-[10px] text-gray-400" aria-live="polite"></ol>
+                </div>
+                <p class="text-[11px] leading-relaxed text-gray-500 mt-3">This self-contained loopback uses two local RTCPeerConnections and host candidates only. It demonstrates browser WebRTC negotiation and stats, not an SFU, TURN deployment, or distributed media mesh.</p>
+            </article>
         </div>
     </section>
-
     <!-- Professional Experience -->
     <main id="experience" class="max-w-7xl mx-auto px-6 py-12">
         <h2 class="text-3xl font-bold text-white mb-8 border-b border-gray-800 pb-4">Professional Experience</h2>
@@ -358,159 +300,5 @@
         <p>© 2026 Md Armaan K. All Core Media Infrastructure Operations Secured. Engineered for Elite Performance.</p>
     </footer>
 
-    <!-- INTERACTIVE SCRIPT SIMULATING ADVANCED FRONT-END FEATS -->
-    <script>
-        // Initialize Lucide Icons for aesthetic visual hooks
-        lucide.createIcons();
-
-        // 1. Dynamic FPS and performance tracker metrics mock
-        const fpsCounter = document.getElementById('fps-counter');
-        setInterval(() => {
-            const dynamicFps = (59.2 + Math.random() * 0.8).toFixed(1);
-            if(fpsCounter) fpsCounter.innerText = dynamicFps;
-        }, 800);
-
-        // 2. Mock Asynchronous Signaling Socket Log Stream
-        const socketBox = document.getElementById('socket-logs-box');
-        const mockLogs = [
-            "Triggered peer connection renegotiation reuse matrix.",
-            "Client canvas buffering verified for frame-accurate playback.",
-            "Dispatched media chunk upload stream directly to AWS S3 bucket.",
-            "Valkey session room keys mapped cleanly to centralized Redis cluster.",
-            "HLS secure segmented playlist initialization complete.",
-            "MediaPipe model verified candidate spatial coordinates alignment.",
-            "Bandwidth throttle event adjusted: Shifting down audio track allocations."
-        ];
-        
-        setInterval(() => {
-            if(socketBox) {
-                const now = new Date();
-                const timeStr = `[${now.toTimeString().split(' ')[0]}]`;
-                const randomMsg = mockLogs[Math.floor(Math.random() * mockLogs.length)];
-                
-                const logLine = document.createElement('div');
-                logLine.className = 'text-gray-500 animate-fade-in';
-                logLine.innerHTML = `<span class="text-gray-400">${timeStr}</span> ${randomMsg}`;
-                socketBox.appendChild(logLine);
-                socketBox.scrollTop = socketBox.scrollHeight;
-                
-                // Keep max logs small for performance
-                if(socketBox.children.length > 20) {
-                    socketBox.removeChild(socketBox.children[0]);
-                }
-            }
-        }, 3000);
-
-        // 3. AI Anomaly Simulation Click Event Trigger
-        const anomalyBtn = document.getElementById('simulate-anomaly-btn');
-        const cam2Card = document.getElementById('cam2-card');
-        const cam2AnomalyBox = document.getElementById('cam2-anomaly-box');
-        const cam2StatusDot = document.getElementById('cam2-status-dot');
-        const cam2Bandwidth = document.getElementById('cam2-bandwidth');
-        const cam2AiTag = document.getElementById('cam2-ai-tag');
-        const mapAnomalyNode = document.getElementById('map-anomaly-node');
-
-        if(anomalyBtn) {
-            anomalyBtn.addEventListener('click', () => {
-                if(cam2AnomalyBox && cam2AnomalyBox.classList.contains('hidden')) {
-                    // Turn on anomaly warnings
-                    cam2AnomalyBox.classList.remove('hidden');
-                    cam2Card.classList.remove('border-gray-800');
-                    cam2Card.classList.add('border-red-500', 'shadow-[0_0_15px_rgba(239,68,68,0.3)]');
-                    cam2StatusDot.classList.remove('bg-emerald-500');
-                    cam2StatusDot.classList.add('bg-red-500');
-                    cam2Bandwidth.innerText = "1850 Kbps (Intensive)";
-                    cam2AiTag.innerText = "CRITICAL VIOLATION DETECTED";
-                    cam2AiTag.className = "text-red-400 font-bold bg-red-950/80 px-2 py-0.5 rounded border border-red-800/50 text-[10px] tracking-wide uppercase";
-                    if(mapAnomalyNode) mapAnomalyNode.classList.remove('hidden');
-                    
-                    // Add alert log
-                    const logLine = document.createElement('div');
-                    logLine.className = 'text-red-400 font-bold';
-                    logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] [CRITICAL ALERT] CAM_02 triggered MULTIPLE_FACES_DETECTED vector payload!`;
-                    socketBox.appendChild(logLine);
-                    socketBox.scrollTop = socketBox.scrollHeight;
-
-                    anomalyBtn.innerText = "Clear AI Anomaly";
-                    anomalyBtn.className = "text-xs px-4 py-2 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-semibold rounded-lg flex items-center gap-1.5 transition-all active:scale-95";
-                } else {
-                    // Clear anomaly warnings
-                    cam2AnomalyBox.classList.add('hidden');
-                    cam2Card.classList.remove('border-red-500', 'shadow-[0_0_15px_rgba(239,68,68,0.3)]');
-                    cam2Card.classList.add('border-gray-800');
-                    cam2StatusDot.classList.remove('bg-red-500');
-                    cam2StatusDot.classList.add('bg-emerald-500');
-                    cam2Bandwidth.innerText = "420 Kbps";
-                    cam2AiTag.innerText = "Face-API.js Verified";
-                    cam2AiTag.className = "text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50 text-[10px] tracking-wide uppercase";
-                    if(mapAnomalyNode) mapAnomalyNode.classList.add('hidden');
-
-                    // Add clean log
-                    const logLine = document.createElement('div');
-                    logLine.className = 'text-emerald-400';
-                    logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] [RESOLVED] Client runtime pipelines cleared anomaly logs successfully.`;
-                    socketBox.appendChild(logLine);
-                    socketBox.scrollTop = socketBox.scrollHeight;
-
-                    anomalyBtn.innerText = "Trigger AI Anomaly";
-                    anomalyBtn.className = "text-xs px-4 py-2 bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-300 font-semibold rounded-lg flex items-center gap-1.5 transition-all active:scale-95";
-                }
-            });
-        }
-
-        // 4. Interactive Timeline Scrubbing Mock
-        const timeline = document.getElementById('scrubber-timeline');
-        const progress = document.getElementById('scrubber-progress');
-        const handle = document.getElementById('scrubber-handle');
-        const timestamp = document.getElementById('timeline-timestamp');
-
-        if(timeline) {
-            timeline.addEventListener('click', (e) => {
-                const rect = timeline.getBoundingClientRect();
-                const clickX = e.clientX - rect.left;
-                const percentage = Math.max(0, Math.min(100, (clickX / rect.width) * 100));
-                
-                if(progress) progress.style.width = `${percentage}%`;
-                if(handle) handle.style.left = `${percentage}%`;
-                
-                // Calculate simulated hours/minutes
-                const totalSeconds = 3600; // 1 hour
-                const currentSeconds = Math.floor((percentage / 100) * totalSeconds);
-                const hrs = String(Math.floor(currentSeconds / 3600)).padStart(2, '0');
-                const mins = String(Math.floor((currentSeconds % 3600) / 60)).padStart(2, '0');
-                const secs = String(currentSeconds % 60).padStart(2, '0');
-                
-                if(timestamp) timestamp.innerText = `${hrs}:${mins}:${secs} / 01:00:00`;
-                
-                // Log interactive scrub event
-                const logLine = document.createElement('div');
-                logLine.className = 'text-blue-300 text-[9px]';
-                logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] Client frame scrubbed precisely to spatial marker index: ${percentage.toFixed(2)}%`;
-                socketBox.appendChild(logLine);
-                socketBox.scrollTop = socketBox.scrollHeight;
-            });
-        }
-
-        // 5. Secure Clip Chunk Generation Interaction
-        const shareBtn = document.getElementById('share-chunk-btn');
-        const statusMsg = document.getElementById('clip-status-msg');
-
-        if(shareBtn && statusMsg) {
-            shareBtn.addEventListener('click', () => {
-                statusMsg.innerText = "Compiling secure video layout buffer stream into isolated chunks...";
-                statusMsg.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    statusMsg.innerText = "✓ Secure shared video chunk successfully generated (Base64 chunk string signed via AWS S3 asset loop Key)";
-                    
-                    const logLine = document.createElement('div');
-                    logLine.className = 'text-indigo-400 font-semibold';
-                    logLine.innerText = `[${new Date().toTimeString().split(' ')[0]}] [SUCCESS] Dispatched secure shared clip payload tracking link to local client clipboard matrix.`;
-                    socketBox.appendChild(logLine);
-                    socketBox.scrollTop = socketBox.scrollHeight;
-                }, 1500);
-            });
-        }
-    </script>
 </body>
 </html>
